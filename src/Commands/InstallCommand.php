@@ -52,7 +52,7 @@ class InstallCommand extends Command
     public function dumpAutoLoad()
     {
         $composer = $this->findComposer();
-        $process = new Process($composer.' dump-autoload');
+        $process = new Process(array($composer, 'dump-autoload'));
         $process->setTimeout(null);
         $process->setWorkingDirectory(base_path())->run();
     }
